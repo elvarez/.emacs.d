@@ -57,4 +57,16 @@
    kept-old-versions 2
    version-control t)       ; use versioned backups
 
+;; send buffer in email
+(defun email-buffer (start end)
+  "Send region as the body of an email."
+  (interactive "r")
+  (let ((content (buffer-substring (point-min) (point-max))))
+    (compose-mail)
+    (message-goto-body)
+    (insert content)
+    (message-goto-to)))
+(global-set-key (kbd "C-c m") 'email-buffer)
+
 (provide 'usefunctions)
+
