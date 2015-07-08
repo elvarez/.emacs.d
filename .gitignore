@@ -16,4 +16,7 @@ cache
 \#*\#
 *.elc
 .\#*
+
+
 /lisp/multi-term.el
+/lisp/dired-details.el

@@ -1,7 +1,13 @@
+(custom-set-variables
+ '(initial-frame-alist (quote ((fullscreen . maximized)))))
 (global-visual-line-mode t)
 (desktop-save-mode 1)
 
+;; less details for dired
+(require 'dired-details)
+(dired-details-install)
 (custom-set-variables
+
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
