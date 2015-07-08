@@ -1,10 +1,18 @@
 (require 'org-habit)
+(require 'org-capture)
 ;; org mode key bindings and files
 (global-set-key "\C-ca" 'org-agenda)
 (setq org-agenda-files '("~/Dropbox/morg"))
 (setq org-default-notes-file "~/Dropbox/morg/notes.org")
 (setq org-archive-location "~/Dropbox/morg/archives/%s_archive::")
 (define-key global-map "\C-cc" 'org-capture)
+
+;; org capture templates
+(setq org-capture-templates
+      '(("t" "Todo" entry (file+headline org-default-notes-file "Tasks")
+	 "* TODO %?")
+	("p" "Event" entry (file+headline org-default-notes-file "Event")
+	       "* %? \n %t")))
 
 ;; speed commands
 
