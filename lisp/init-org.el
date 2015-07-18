@@ -7,6 +7,18 @@
 (setq org-archive-location "~/Dropbox/morg/archives/%s_archive::")
 (define-key global-map "\C-cc" 'org-capture)
 
+;; agenda export
+(setq org-agenda-custom-commands
+           '(("X" agenda "" nil ("~/Dropbox/morg/share/agenda.txt"))
+	     ("Y" alltodo "" nil ("~/Dropbox/morg/share/todo.txt"))
+))
+
+(defun progo-run-agenda-store ()
+  (org-store-agenda-views)
+  )
+
+(run-at-time 5 60 'progo-run-agenda-store)
+
 ;; org capture templates
 (setq org-capture-templates
       '(("t" "Todo" entry (file+headline org-default-notes-file "Tasks")
